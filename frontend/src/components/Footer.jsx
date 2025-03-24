@@ -16,10 +16,10 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="flex gap-4 mt-6 md:mt-0">
+          <a href="https://www.instagram.com/leptop_tz?igsh=eDNqeWFkcDEyYzFt " className="text-black hover:text-black transition text-xl"><FaInstagram /></a>
+          <a href="https://www.linkedin.com/in/preetabh-awasthi-070836290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " className="text-black hover:text-black transition text-xl"><FaLinkedin /></a>
           <a href="#" className="text-black hover:text-black transition text-xl"><FaFacebookF /></a>
           <a href="#" className="text-black hover:text-black transition text-xl"><FaTwitter /></a>
-          <a href="#" className="text-black hover:text-black transition text-xl"><FaInstagram /></a>
-          <a href="#" className="text-black hover:text-black transition text-xl"><FaLinkedin /></a>
         </div>
       </div>
 
