@@ -1,17 +1,11 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from 'react'
 
-const UserProtectWrapper = ({ children }) => {
-  const navigate = useNavigate();
+const userProtectWrapper = () => {
+  return (
+    <div>
+      <h1>page not found back to home page</h1>
+    </div>
+  )
+}
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      navigate("/login"); // Redirect if token is not found
-    }
-  }, [navigate]); // ✅ Depend on navigate to avoid re-renders
-
-  return <>{children}</>; // ✅ Render children only if token is present
-};
-
-export default UserProtectWrapper;
+export default userProtectWrapper

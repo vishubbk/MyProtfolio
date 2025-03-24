@@ -39,7 +39,7 @@ app.use(express.json());
 
 // Enable CORS with specific options (adjust origin as needed)
 app.use(cors({
-  origin: '*', // Change this to specific frontend domain in production
+  origin: 'https://myprotfolio-1-rfw9.onrender.com','http://localhost:5173/', // Change this to specific frontend domain in production
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
 }));
