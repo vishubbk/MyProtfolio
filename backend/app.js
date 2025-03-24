@@ -7,7 +7,7 @@ const cors = require('cors');
 dotenv.config();
 
 // Debug: Check if MONGODB_URI is loaded
-const MONGODB_URI = process.env.MONGODB_URI ;
+const MONGODB_URI = process.env.MONGO_URI ;
 const PORT = process.env.PORT || 5000;
 
 if (!MONGODB_URI) {
