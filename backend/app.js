@@ -5,7 +5,12 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const app = express();
-const allowedOrigins = ["https://myprotfolio-1-rfw9.onrender.com", "http://localhost:5173"];
+
+// ✅ Allowed Origins (Frontend Domains)
+const allowedOrigins = [
+  "https://myprotfolio-1-rfw9.onrender.com",
+  "http://localhost:5173"
+];
 
 app.use(
   cors({
@@ -17,16 +22,24 @@ app.use(
       }
     },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // ✅ Allow Methods
+    allowedHeaders: ["Content-Type", "Authorization"], // ✅ Allow Headers
   })
 );
 
+// ✅ Handle Preflight Requests (OPTIONS)
+app.options("*", cors());
+
+// Body Parser Middleware
 app.use(bodyParser.json());
 
+// Razorpay Instance
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_KEY,
   key_secret: process.env.RAZORPAY_SECRET,
 });
 
+// ✅ Donation API
 app.post("/api/donate", async (req, res) => {
   try {
     const { amount } = req.body;
@@ -50,6 +63,7 @@ app.post("/api/donate", async (req, res) => {
   }
 });
 
+// ✅ Start Server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
