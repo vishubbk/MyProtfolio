@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Picture from "../assets/About.jpg";
+import Picture from "../assets/WhatsApp Image 2025-03-25 at 23.38.29_9a323701.jpg";
 
 const About = () => {
   return (
