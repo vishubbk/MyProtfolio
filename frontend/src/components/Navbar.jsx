@@ -68,7 +68,7 @@ const Navbar = () => {
           }`}
         >
           <div className="flex justify-between items-center mb-6">
-            <span className="font-semibold">Navigation</span>
+           
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="focus:outline-none"
