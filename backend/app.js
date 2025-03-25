@@ -25,12 +25,16 @@ app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
+        // Allow the request
         callback(null, true);
       } else {
+        // Reject the request if the origin is not allowed
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allowing the methods your API supports
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowing headers like Content-Type, Authorization, etc.
+    credentials: true, // Allow credentials if needed (cookies, authorization headers, etc.)
   })
 );
 
