@@ -68,7 +68,7 @@ const Navbar = () => {
           }`}
         >
           <div className="flex justify-between items-center mb-6">
-           
+
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="focus:outline-none"
@@ -99,10 +99,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <Link to="/login" className="mobile-sign-in-btn flex items-center gap-2">
-              <LogIn size={20} />
-              <span>Sign In</span>
-            </Link>
+           
           </nav>
         </div>
       </div>

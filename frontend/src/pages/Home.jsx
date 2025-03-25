@@ -33,7 +33,7 @@ const Home = () => {
             alt="Profile Picture"
           />
           <div className="social-links mt-4 flex justify-center gap-4">
-            <a href="https://github.com/albert-garcia" target="_blank" rel="noreferrer">
+            <a href="https://github.com/vishubbk" target="_blank" rel="noreferrer">
               <img
                 className="w-28 hover:scale-105 transition-transform duration-300"
                 src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"
@@ -60,7 +60,7 @@ const Home = () => {
           <p className="mt-3 text-lg text-center md:text-left">
             Please visit the{" "}
             <a
-              href="https://github.com/albert-garcia/portfolio"
+              href="https://github.com/vishubbk"
               className="hover:text-indigo-600 underline transition-colors duration-300"
               target="_blank"
               rel="noreferrer"

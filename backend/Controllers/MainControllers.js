@@ -8,8 +8,8 @@ router.post("/", async (req, res) => {
   try {
     const { fullname, email, contact, message } = req.body;
 
-    if (!fullname || !email || !contact || !message) {
-      return res.status(400).json({ message: "All fields are required" });
+    if (!fullname || !email || !contact ) {
+      return res.status(400).json({ message: "Some fields are required" });
     }
 
     const newUser = new User({ fullname, email, contact, message });
