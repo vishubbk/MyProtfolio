@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const compression = require("compression"); // Compress responses
 const bodyParser = require("body-parser");
 const connectDB = require("./db/db");
 const queryRoutes = require("./Controllers/MainControllers");
@@ -16,6 +17,10 @@ const allowedOrigins = [
   "http://localhost:5173"
 ];
 
+// ✅ Middleware
+app.use(express.json()); // Built-in JSON parser
+app.use(compression()); // Compress responses
+
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -28,9 +33,6 @@ app.use(
     credentials: true,
   })
 );
-
-// ✅ Middleware
-app.use(bodyParser.json());
 
 // ✅ API Routes
 app.use("/api/query", queryRoutes);

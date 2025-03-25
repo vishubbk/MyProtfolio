@@ -40,6 +40,11 @@ const TopLanguages = () => {
     },
   ];
 
+  // Function to open the official site in a new tab
+  const openOfficialSite = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className="mt-10 px-4 py-12 bg-gray-100 text-gray-900 rounded-xl shadow-lg">
       <h2 className="text-4xl font-extrabold text-indigo-600 text-center mb-10">
@@ -66,15 +71,18 @@ const TopLanguages = () => {
               {lang.test}
             </p>
 
-            {/* Read More Button */}
-            <a
-              href={lang.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 px-6 py-2 bg-indigo-500 text-white font-bold rounded-lg hover:bg-indigo-600 transition duration-300"
-            >
-              Read More →
-            </a>
+            {/* Read More Button with window.open() */}
+<a
+  className="mt-4 px-6 py-2 bg-indigo-500 text-white font-bold rounded-lg cursor-pointer hover:bg-indigo-600 transition duration-300"
+  href={lang.link}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Read More →
+</a>
+
+
+
 
             {/* Decorative Shadow Effect */}
             <div className="absolute inset-0 bg-indigo-500 opacity-10 rounded-xl blur-md"></div>

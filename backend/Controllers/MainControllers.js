@@ -8,12 +8,12 @@ router.post("/", async (req, res) => {
   try {
     const { fullname, email, contact, message } = req.body;
 
-    if (!fullname || !email || !contact ) {
+    if (!fullname || !email || !contact) {
       return res.status(400).json({ message: "Some fields are required" });
     }
 
     const newUser = new User({ fullname, email, contact, message });
-    await newUser.save();
+    await newUser.save(); // Consider `insertMany` if batching requests
 
     res.status(201).json({ message: "Query submitted successfully" });
   } catch (error) {
