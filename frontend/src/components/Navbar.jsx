@@ -65,7 +65,7 @@ const Navbar = () => {
         }`}
       >
         <div
-          className={`w-72 h-full bg-[#351b1b] shadow-lg p-6 transition-transform duration-300 text-white ${
+          className={`w-72 h-full bg-[#393cda] shadow-lg p-6 transition-transform duration-300 text-white ${
             mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
