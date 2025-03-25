@@ -54,40 +54,53 @@ const Donation = () => {
   };
 
   return (
-    <div>
-      <Navbar />
-      <div className="container mx-auto p-6 text-center">
-        <h1 className="text-4xl font-bold mb-4">Support Our Cause</h1>
-        <p className="text-gray-700 mb-6">
-          Your donation helps us continue our mission and support those in need. Every contribution makes a difference.
+    <div className="min-h-screen flex flex-col bg-gray-50">
+    <Navbar />
+
+    <div className="flex flex-col items-center justify-center flex-grow px-6 mt-25 py-12">
+      <div className="max-w-lg bg-white p-8 rounded-lg shadow-lg text-center">
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">Support Our Cause</h1>
+        <p className="text-gray-600 mb-6">
+          Your donation helps us continue our mission. Every contribution makes a difference.
         </p>
 
-        <div className="bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto">
-          <h2 className="text-2xl font-semibold mb-4">Choose Your Donation Amount</h2>
-          <div className="flex justify-center gap-4 mb-4">
-            <button onClick={() => setAmount(100)} className="px-4 py-2 bg-blue-500 text-white rounded">₹100</button>
-            <button onClick={() => setAmount(500)} className="px-4 py-2 bg-blue-500 text-white rounded">₹500</button>
-            <button onClick={() => setAmount(1000)} className="px-4 py-2 bg-blue-500 text-white rounded">₹1000</button>
-          </div>
-
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Enter Custom Amount"
-            className="w-full p-2 border rounded mb-4"
-          />
-
-          <button
-            onClick={handleDonate}
-            className="w-full bg-green-500 text-white py-2 rounded-lg text-lg"
-          >
-            Donate ₹{amount || "Now"}
-          </button>
+        {/* Donation Options */}
+        <div className="flex justify-center gap-4 mb-6">
+          {[100, 500, 1000].map((amt) => (
+            <button
+              key={amt}
+              onClick={() => setAmount(amt)}
+              className={`px-5 py-2 rounded-lg text-white font-semibold transition ${
+                amount === amt ? "bg-indigo-700" : "bg-indigo-500 hover:bg-indigo-600"
+              }`}
+            >
+              ₹{amt}
+            </button>
+          ))}
         </div>
+
+        {/* Custom Amount Input */}
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter Custom Amount"
+          className="w-full p-3 border border-gray-300 rounded-md text-center mb-4 focus:ring focus:ring-indigo-200"
+        />
+
+        {/* Donate Button */}
+        <button
+          onClick={handleDonate}
+          className="w-full bg-indigo-600 text-white py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition"
+        >
+          Donate ₹{amount || "Now"}
+        </button>
       </div>
-      <Footer />
     </div>
+
+    <Footer />
+  </div>
+
   );
 };
 
