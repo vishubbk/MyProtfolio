@@ -1,79 +1,56 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const cors = require('cors');
+require("dotenv").config();
+const express = require("express");
+const Razorpay = require("razorpay");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
-// Load environment variables
-dotenv.config();
-
-// Debug: Check if MONGODB_URI is loaded
-const MONGODB_URI = process.env.MONGO_URI ;
-const PORT = process.env.PORT || 5000;
-
-if (!MONGODB_URI) {
-  console.error("❌ MONGODB_URI is not defined in the environment variables.");
-  process.exit(1);
-}
-
-// Connect to MongoDB
-const connectDB = async () => {
-  try {
-    await mongoose.connect(MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    console.log('✅ Connected to MongoDB');
-  } catch (err) {
-    console.error(`❌ MongoDB connection error: ${err.message}`);
-    process.exit(1);
-  }
-};
-connectDB();
-
-// Import models
-const User = require('./models/MainModel');
-
-// Initialize Express app
 const app = express();
-app.use(express.json());
+const allowedOrigins = ["https://myprotfolio-1-rfw9.onrender.com", "http://localhost:5173"];
 
-// Enable CORS with specific options (adjust origin as needed)
-app.use(cors({
-  origin: ['https://myprotfolio-1-rfw9.onrender.com', 'http://localhost:5173'],
-  methods: ['GET', 'POST'],
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
-// API Route to handle contact form submissions
-app.post('/api/query', async (req, res) => {
+app.use(bodyParser.json());
+
+const razorpay = new Razorpay({
+  key_id: process.env.RAZORPAY_KEY,
+  key_secret: process.env.RAZORPAY_SECRET,
+});
+
+app.post("/api/donate", async (req, res) => {
   try {
-    const { fullname, email, contact, message } = req.body;
-    if (!fullname || !email || !contact || !message) {
-      return res.status(400).json({ message: 'All fields are required' });
+    const { amount } = req.body;
+
+    if (!amount || isNaN(amount)) {
+      return res.status(400).json({ message: "Valid amount is required" });
     }
 
-    const newUser = new User({ fullname, email, contact, message });
-    await newUser.save();
+    const paymentOptions = {
+      amount: parseInt(amount) * 100, // Convert to paisa
+      currency: "INR",
+      receipt: `receipt_${Date.now()}`,
+    };
 
-    res.status(201).json({ message: 'Query submitted successfully Wait for 24Hrs' });
+    const order = await razorpay.orders.create(paymentOptions);
+
+    res.json({ orderId: order.id, amount: order.amount, key: process.env.RAZORPAY_KEY });
   } catch (error) {
-    console.error(`❌ Server error: ${error.message}`);
-    res.status(500).json({ message: 'Server error', error: error.message });
+    console.error("Razorpay Order Error:", error);
+    res.status(500).json({ message: "Something went wrong" });
   }
 });
 
-// API Route to get all queries
-app.get('/api/queries', async (req, res) => {
-  try {
-    const queries = await User.find();
-    res.status(200).json(queries);
-  } catch (error) {
-    console.error(`❌ Server error: ${error.message}`);
-    res.status(500).json({ message: 'Server error', error: error.message });
-  }
-});
-
-// Start server
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Home, ShoppingBag, User, Menu, X, LogIn } from "lucide-react";
+import { Home, ShoppingBag, User, Menu, X, LogIn, IndianRupee } from "lucide-react";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -29,6 +29,7 @@ const Navbar = () => {
               { path: "/Projects", label: "Projects", icon: ShoppingBag },
               { path: "/About", label: "About", icon: User },
               { path: "/Contact", label: "Contact", icon: X },
+              { path: "/Donation", label: "Donation", icon: IndianRupee },
             ].map(({ path, label, icon: Icon }) => (
               <Link
                 key={path}
@@ -42,10 +43,7 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <Link to="/login" className="sign-in-btn flex items-center gap-2">
-              <LogIn size={20} />
-              <span>Sign In</span>
-            </Link>
+
           </nav>
 
           {/* Mobile Menu Button */}
@@ -86,6 +84,7 @@ const Navbar = () => {
               { path: "/Projects", label: "Projects", icon: ShoppingBag },
               { path: "/About", label: "About", icon: User },
               { path: "/Contact", label: "Contact", icon: User },
+              { path: "/Donation", label: "Donation", icon: IndianRupee },
             ].map(({ path, label, icon: Icon }) => (
               <Link
                 key={path}
