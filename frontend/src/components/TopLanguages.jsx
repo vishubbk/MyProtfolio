@@ -1,4 +1,5 @@
 import React from "react";
+import {motion} from 'motion/react'
 
 const TopLanguages = () => {
   const languages = [
@@ -56,7 +57,11 @@ const TopLanguages = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {languages.map((lang, index) => (
-          <div
+          <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileTap={{ scale: 0.95 }}
+
             key={index}
             className="relative flex flex-col items-center p-6 bg-white rounded-xl border border-gray-300 shadow-lg transition transform hover:scale-105"
           >
@@ -76,18 +81,21 @@ const TopLanguages = () => {
             </p>
 
             {/* Read More Button */}
-            <a
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className="mt-4 px-6 py-2 bg-indigo-500 text-white font-bold rounded-lg cursor-pointer hover:bg-indigo-600 transition duration-300"
               href={lang.link}
               target="_blank"
               rel="noopener noreferrer"
             >
               Read More →
-            </a>
+            </motion.a>
 
             {/* Decorative Shadow Effect */}
             <div className="absolute inset-0 bg-indigo-500 opacity-10 rounded-xl blur-md pointer-events-none"></div>
-          </div>
+          </motion.div>
+
         ))}
       </div>
 
