@@ -31,7 +31,7 @@ const Navbar = () => {
               { path: "/Projects", label: "Projects", icon: ShoppingBag },
               { path: "/About", label: "About", icon: User },
               { path: "/Contact", label: "Contact", icon: X },
-              { path: "/Donation", label: "Donation", icon: IndianRupee },
+              { path: "/MyWork", label: "My Work", icon: IndianRupee },
             ].map(({ path, label, icon: Icon }) => (
               <Link
                 key={path}
@@ -86,7 +86,7 @@ const Navbar = () => {
               { path: "/Projects", label: "Projects", icon: ShoppingBag },
               { path: "/About", label: "About", icon: User },
               { path: "/Contact", label: "Contact", icon: User },
-              { path: "/Donation", label: "Donation", icon: IndianRupee },
+              { path: "/MyWork", label: "My Work", icon: IndianRupee },
             ].map(({ path, label, icon: Icon }) => (
               <Link
                 key={path}

@@ -40,10 +40,14 @@ const TopLanguages = () => {
     },
   ];
 
-  // Function to open the official site in a new tab
-  const openOfficialSite = (url) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
+  const roadmap = [
+    { title: "Step 1: Learn HTML & CSS", desc: "Start with the basics of HTML & CSS to structure and style web pages.", color: "bg-blue-500" },
+    { title: "Step 2: Master JavaScript", desc: "Understand JavaScript fundamentals to add interactivity.", color: "bg-green-500" },
+    { title: "Step 3: Explore Frontend Frameworks", desc: "Learn React, Vue, or Angular to build dynamic UI.", color: "bg-purple-500" },
+    { title: "Step 4: Backend Development", desc: "Get familiar with Node.js, Express, or Django for server-side development.", color: "bg-yellow-500" },
+    { title: "Step 5: Database Management", desc: "Understand SQL (PostgreSQL, MySQL) or NoSQL (MongoDB) databases.", color: "bg-red-500" },
+    { title: "Step 6: Deployment & DevOps", desc: "Deploy websites using Netlify, Vercel, or Render. Learn CI/CD basics.", color: "bg-indigo-500" },
+  ];
 
   return (
     <div className="mt-10 px-4 py-12 bg-gray-100 text-gray-900 rounded-xl shadow-lg">
@@ -71,23 +75,34 @@ const TopLanguages = () => {
               {lang.test}
             </p>
 
-            {/* Read More Button with window.open() */}
-<a
-  className="mt-4 px-6 py-2 bg-indigo-500 text-white font-bold rounded-lg cursor-pointer hover:bg-indigo-600 transition duration-300"
-  href={lang.link}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Read More →
-</a>
-
-
-
+            {/* Read More Button */}
+            <a
+              className="mt-4 px-6 py-2 bg-indigo-500 text-white font-bold rounded-lg cursor-pointer hover:bg-indigo-600 transition duration-300"
+              href={lang.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read More →
+            </a>
 
             {/* Decorative Shadow Effect */}
-            <div className="absolute inset-0 bg-indigo-500 opacity-10 rounded-xl blur-md"></div>
+            <div className="absolute inset-0 bg-indigo-500 opacity-10 rounded-xl blur-md pointer-events-none"></div>
           </div>
         ))}
+      </div>
+
+      {/* Roadmap Section */}
+      <div className="mt-16 px-6 py-10 bg-white rounded-lg shadow-lg">
+        <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">📍 Web Development Roadmap</h2>
+        <div className="relative border-l-4 border-gray-300 ml-6">
+          {roadmap.map((step, index) => (
+            <div key={index} className="mb-8 ml-6">
+              <div className={`w-6 h-6 ${step.color} rounded-full absolute -left-3 top-1`}></div>
+              <h3 className="text-xl font-semibold">{step.title}</h3>
+              <p className="text-gray-700">{step.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

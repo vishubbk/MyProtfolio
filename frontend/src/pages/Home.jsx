@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import TopLanguages from "../components/TopLanguages";
-import RecommentedRoadmap from "../components/RecommentedRoadmap";
+
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -108,7 +108,7 @@ const Home = () => {
         transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: true }}
       >
-        <RecommentedRoadmap />
+
       </motion.div>
 
 <Footer/>
