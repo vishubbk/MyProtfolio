@@ -135,33 +135,49 @@ const Donation = () => {
         </ul>
       </div>
       {/* demo website */}
-      <div className="">
-        <h2 className="text-2xl font-semibold text-red-800 mb-5  flex justify-center m-5">��‍�� Demonstration of a Website��‍��</h2>
-        <div className="flex justify-center">
-          <img
-            className=" md:w-[20%] border-4 border-gray-600 rounded-lg shadow-lg"
-            src="https://media.istockphoto.com/id/852731970/photo/computer-service.webp?a=1&b=1&s=612x612&w=0&k=20&c=yWA0-bPkk4UFqt0o9D2ZtLqTiXa2Fns3XrVPRf--IQA="
-            alt="Demonstration of a Website"
-          />
-          <div className="ml-6">
-            <h3 className="text-lg font-semibold text-gray-800 ">Website Design and Development</h3>
-            <p>
-              This website was designed and developed by <span className="font-semibold text-blue-600">leptop_tz</span> using modern technology and a focus on user-friendly design.
-            </p>
-            <p>
-              The website is built using React, Nodejs and Tailwind CSS. It also includes a contact form and a payment gateway using RazorPay.
-            </p>
-            <div className="flex gap-4 justify-center items-center p-4 bg-gray-300 rounded-lg mt-8">
-  <a href="" className="text-blue-500 font-semibold transition-colors duration-300 hover:text-orange-500">Link-1</a>
-  <a href="" className="text-blue-500 font-semibold transition-colors duration-300 hover:text-orange-500">Link-2</a>
-  <a href="" className="text-blue-500 font-semibold transition-colors duration-300 hover:text-orange-500">Link-3</a>
-  <a href="" className="text-blue-500 font-semibold transition-colors duration-300 hover:text-orange-500">Link-4</a>
-  <a href="" className="text-blue-500 font-semibold transition-colors duration-300 hover:text-orange-500">Link-5</a>
-</div>
+      <div className="p-5">
+      <h2 className="text-2xl md:text-3xl font-semibold text-red-800 mb-5 flex justify-center">
+        👨‍💻 Demonstration of a Website 👨‍💻
+      </h2>
 
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+        {/* Image Section */}
+        <img
+          className="w-full sm:w-[60%] md:w-[30%] lg:w-[20%] border-4 border-gray-600 rounded-lg shadow-lg"
+          src="https://media.istockphoto.com/id/852731970/photo/computer-service.webp?a=1&b=1&s=612x612&w=0&k=20&c=yWA0-bPkk4UFqt0o9D2ZtLqTiXa2Fns3XrVPRf--IQA="
+          alt="Demonstration of a Website"
+        />
+
+        {/* Content Section */}
+        <div className="text-center md:text-left">
+          <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+            Website Design and Development
+          </h3>
+          <p className="text-sm md:text-base">
+            This website was designed and developed by{" "}
+            <span className="font-semibold text-blue-600">leptop_tz</span> using modern technology and a focus on
+            user-friendly design.
+          </p>
+          <p className="text-sm md:text-base mt-2">
+            The website is built using <strong>React, Node.js, and Tailwind CSS</strong>. It also includes a contact form
+            and a payment gateway using <strong>Razorpay</strong>.
+          </p>
+
+          {/* Links Section */}
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start items-center p-4 bg-gray-300 rounded-lg mt-8">
+            {["Link-1", "Link-2", "Link-3", "Link-4", "Link-5"].map((link, index) => (
+              <a
+                key={index}
+                href="#"
+                className="text-blue-500 font-semibold transition-colors duration-300 hover:text-orange-500 text-sm md:text-base"
+              >
+                {link}
+              </a>
+            ))}
           </div>
         </div>
       </div>
+    </div>
 
       <Footer />
     </motion.div>
