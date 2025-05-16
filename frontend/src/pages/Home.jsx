@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <motion.div
-      className="bg-gray-100 text-gray-900 min-h-screen overflow-hidden"
+      className="bg-[#f6e9e9] text-gray-900 min-h-screen overflow-hidden"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -21,7 +21,7 @@ const Home = () => {
 
         {/* Left - Profile Image */}
         <motion.div
-          className="w-full md:w-[45%] p-6 rounded-lg shadow-lg flex flex-col items-center bg-white"
+          className="w-full md:w-[45%] p-6 rounded-lg shadow-lg flex flex-col items-center bg-[#EEEE]"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -75,13 +75,13 @@ const Home = () => {
               I specialize in creating{" "}
               <span className="font-bold text-indigo-600">modern, responsive web applications</span>
               using <span className="font-bold text-blue-600">React, Vite, and Tailwind CSS</span>.
-              I have expertise in <span className="font-bold text-blue-600">JavaScript</span>,{" "}
+              I have expertise in <span className="font-bold text-blue-600">JavaScript ,NodeJs ,ExpressJs</span>,{" "}
               <span className="font-bold text-blue-600">MongoDB</span>, and integrating{" "}
               <span className="font-bold text-red-500">payment gateways like Razorpay</span>.
               I also have experience with <span className="font-bold text-indigo-500">GitHub Premium</span>,{" "}
               <span className="font-bold text-indigo-500">Cloudinary</span> for file storage,
               and deploying applications using <span className="font-bold text-indigo-500">Render</span>.
-              Additionally, I am working on a <span className="font-bold text-yellow-600">voice assistant project</span>{" "}
+              Additionally, I am working on a <span className="font-bold text-yellow-600">Major project</span>{" "}
               using <span className="font-bold text-yellow-600">Python</span>.
             </p>
           </div>

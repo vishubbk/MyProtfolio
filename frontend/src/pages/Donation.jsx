@@ -23,6 +23,13 @@ const imgVariants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
 };
+const demoLinks = [
+  { name: "Link-1", url: "https://ewebotwp.com/home-01/" },
+  { name: "Link-2", url: "https://ewebotwp.com/home-agency/" },
+  { name: "Link-3", url: "https://ewebotwp.com/home-04/" },
+  { name: "Link-4", url: "https://ewebotwp.com/home-05/" },
+];
+
 
 const Donation = () => {
   return (
@@ -30,7 +37,7 @@ const Donation = () => {
       variants={pageVariants}
       initial="initial"
       animate="animate"
-      className="bg-gradient-to-r bg-white bg-opacity-50 backdrop-blur-lg min-h-screen"
+      className="bg-gradient-to-r bg-[#EEEE] bg-opacity-50 backdrop-blur-lg min-h-screen"
     >
       <Navbar />
 
@@ -165,15 +172,18 @@ const Donation = () => {
 
           {/* Links Section */}
           <div className="flex flex-wrap gap-4 justify-center md:justify-start items-center p-4 bg-gray-300 rounded-lg mt-8">
-            {["Link-1", "Link-2", "Link-3", "Link-4", "Link-5"].map((link, index) => (
-              <a
-                key={index}
-                href="#"
-                className="text-blue-500 font-semibold transition-colors duration-300 hover:text-orange-500 text-sm md:text-base"
-              >
-                {link}
-              </a>
-            ))}
+          {demoLinks.map((link, index) => (
+  <a
+    key={index}
+    href={link.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-500 font-semibold transition-colors duration-300 hover:text-orange-500 text-sm md:text-base"
+  >
+    {link.name}
+  </a>
+))}
+
           </div>
         </div>
       </div>
