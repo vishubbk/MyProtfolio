@@ -31,7 +31,7 @@ app.options("*", cors()); // this will respond to OPTIONS before hitting routes
 app.use(bodyParser.json());
 
 // ✅ Ping route for UptimeRobot
-app.get("/ping", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).send("welcome to the api! All systems operational");
 });
 
