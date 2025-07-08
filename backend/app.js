@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 
 // ✅ Ping route for UptimeRobot
 app.get("/ping", (req, res) => {
-  res.status(200).json({ alive: true });
+  res.status(200).send("welcome to the api! All systems operational");
 });
 
 // ✅ API Routes
