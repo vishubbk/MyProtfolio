@@ -10,24 +10,36 @@ const app = express();
 // ✅ Connect to MongoDB
 connectDB();
 
+// 🔹 CORS Configuration (💡 must come before other middleware & routes)
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://myprotfolio-1-rfw9.onrender.com"
+];
 
-
-// 🔹 CORS Configuration
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://myprotfolio-1-rfw9.onrender.com"],
+    origin: allowedOrigins,
     credentials: true,
-
+    methods: ["GET", "POST", "OPTIONS"],
   })
 );
+
+// 🔸 OPTIONAL BUT RECOMMENDED: Handle preflight OPTIONS request manually
+app.options("*", cors()); // this will respond to OPTIONS before hitting routes
 
 // Middleware
 app.use(bodyParser.json());
 
+// ✅ Ping route for UptimeRobot
+app.get("/ping", (req, res) => {
+  res.status(200).json({ alive: true });
+});
+
 // ✅ API Routes
 app.use("/api/query", queryRoutes);
 
+// Start Server
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
