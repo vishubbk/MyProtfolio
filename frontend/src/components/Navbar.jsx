@@ -19,7 +19,7 @@ const Navbar = () => {
               alt="My Logo"
               className="w-12 h-12 object-cover rounded-full border-2 border-white"
             />
-            <h1 className='text-xl font-bold text-[white]'>&lt;Leptop_tz/&gt;</h1>
+            <h1 className='text-xl font-bold text-[white]'>&lt;PREETABH/&gt;</h1>
             </a>
 
           </div>
