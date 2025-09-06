@@ -3,44 +3,119 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
 const TopLanguages = () => {
-  const languages = [
-    {
-      name: "JavaScript",
-      test: "Versatile, powerful, and the backbone of interactive web development.",
-      img: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-      link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
-    },
-    {
-      name: "Python",
-      test: "Beginner-friendly, great for AI, data science, and backend development.",
-      img: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-      link: "https://www.python.org/about/gettingstarted/",
-    },
-    {
-      name: "Java",
-      test: "Robust and portable, widely used for Android and enterprise applications.",
-      img: "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
-      link: "https://www.java.com/en/download/help/getting-started.html",
-    },
-    {
-      name: "C#",
-      test: "Microsoft’s modern, scalable language ideal for desktop, web, and games.",
-      img: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png",
-      link: "https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/",
-    },
-    {
-      name: "C++",
-      test: "High-performance language used in systems, games, and real-time software.",
-      img: "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
-      link: "https://cplusplus.com/doc/tutorial/",
-    },
-    {
-      name: "PHP",
-      test: "Popular server-side scripting language used in web and CMS development.",
-      img: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
-      link: "https://www.php.net/manual/en/getting-started.php",
-    },
-  ];
+const languages = [
+  // 🟢 Basic / Core
+  {
+    name: "HTML",
+    img: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+    link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  {
+    name: "CSS",
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
+    link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+  {
+    name: "JavaScript",
+    img: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+    link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+  },
+
+  // 🟡 Frontend
+  {
+    name: "React.js",
+    img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    link: "https://react.dev/",
+  },
+  {
+    name: "Tailwind CSS",
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+    link: "https://tailwindcss.com/docs",
+  },
+  {
+    name: "GSAP",
+    img: "https://greensock.com/uploads/monthly_2020_05/gsap-thumb.png",
+    link: "https://greensock.com/docs/",
+  },
+
+  // 🔵 Backend
+  {
+    name: "Node.js",
+    img: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+    link: "https://nodejs.org/en/docs",
+  },
+  {
+    name: "Express.js",
+    img: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
+    link: "https://expressjs.com/",
+  },
+  {
+    name: "Axios",
+    img: "https://axios-http.com/assets/logo.svg",
+    link: "https://axios-http.com/",
+  },
+
+  // 🟣 Database & Storage
+  {
+    name: "MongoDB",
+    img: "https://upload.wikimedia.org/wikipedia/en/4/45/MongoDB-Logo.svg",
+    link: "https://www.mongodb.com/docs/",
+  },
+  {
+    name: "Mongoose",
+    img: "https://avatars.githubusercontent.com/u/7552965?s=200&v=4",
+    link: "https://mongoosejs.com/docs/",
+  },
+  {
+    name: "Cloudinary",
+    img: "https://res.cloudinary.com/cloudinary-marketing/image/upload/v1658997713/website/brand/cloudinary_icon_blue.png",
+    link: "https://cloudinary.com/documentation",
+  },
+
+  // 🟠 Deployment
+  {
+    name: "Render",
+    img: "https://avatars.githubusercontent.com/u/40662031?s=200&v=4",
+    link: "https://render.com/docs",
+  },
+
+  // 🟡 Payment & Auth
+  {
+    name: "Razorpay",
+    img: "https://razorpay.com/assets/razorpay-logo.svg",
+    link: "https://razorpay.com/docs/",
+  },
+  {
+    name: "JWT (JSON Web Tokens)",
+    img: "https://jwt.io/img/pic_logo.svg",
+    link: "https://jwt.io/",
+  },
+  {
+    name: "bcrypt.js",
+    img: "https://img.icons8.com/?size=100&id=24895&format=png&color=000000",
+    link: "https://www.npmjs.com/package/bcrypt",
+  },
+
+  // 🔧 Tools
+  {
+    name: "Git",
+    img: "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+    link: "https://git-scm.com/doc",
+  },
+  {
+    name: "GitHub",
+    img: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+    link: "https://docs.github.com/en/get-started",
+  },
+  {
+    name: "Postman",
+    img: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png",
+    link: "https://learning.postman.com/docs/getting-started/introduction/",
+  },
+
+];
+
+
 
   const roadmap = [
     { title: "Learn HTML & CSS", desc: "Structure and style your webpages.", color: "bg-blue-500" },
@@ -58,46 +133,37 @@ const TopLanguages = () => {
        
         <div className="max-w-6xl mx-auto">
   <h2 className="text-4xl font-bold text-center text-indigo-700 mb-12">
-    🚀 Top Programming Languages to Learn in 2025
+    🚀 MY SKILLS
   </h2>
+  
 
-  <div className="space-y-10">
-    {languages.map((lang, index) => (
-      <motion.div
-        key={index}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-md hover:shadow-xl transition-all overflow-hidden"
-      >
-        {/* Image */}
-        <div className="md:w-1/3 p-6 flex justify-center items-center bg-gray-100">
-          <img
-            src={lang.img}
-            alt={lang.name}
-            className="w-28 h-28 object-contain"
-          />
-        </div>
+ <div className="w-[90%] m-auto h-full grid gap-6 
+                grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  {languages.map((lang, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.15 }}
+      viewport={{ once: true }}
+    >
+      <div className="w-auto h-48 flex flex-col justify-center gap-4 items-center 
+                      bg-white border border-gray-200 rounded-2xl shadow-md 
+                      hover:bg-[#e9e0e0] hover:text-[#000000] hover:scale-105 
+                      transition-all duration-300 cursor-pointer">
+        
+        <img
+          className="w-14 h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+          src={lang.img}
+          alt={lang.name}
+        />
+        
+        <p className="text-lg font-semibold">{lang.name}</p>
+      </div>
+    </motion.div>
+  ))}
+</div>
 
-        {/* Content */}
-        <div className="md:w-2/3 p-6 flex flex-col justify-between">
-          <span className="inline-block text-sm font-bold bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full w-max mb-2">
-            {lang.name}
-          </span>
-          <p className="text-gray-700 text-base mb-4">{lang.test}</p>
-          <a
-            href={lang.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition"
-          >
-            Learn More <ExternalLink size={16} />
-          </a>
-        </div>
-      </motion.div>
-    ))}
-  </div>
 </div>
 
 

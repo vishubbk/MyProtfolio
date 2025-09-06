@@ -1,7 +1,11 @@
-import React from "react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 // Animation Variants
 const pageVariants = {
@@ -32,6 +36,43 @@ const demoLinks = [
 
 
 const Donation = () => {
+  const ConvertBlack = useRef(null)
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  useGSAP(() => {
+    ScrollTrigger.matchMedia({
+      "(max-width: 768px)": function () {
+        gsap.to(ConvertBlack.current, {
+          scrollTrigger: {
+            trigger: ConvertBlack.current,
+            start: "top -=500",
+            toggleActions: "play none none reverse",
+
+          },
+          backgroundColor: "black",
+          color: "white",
+        });
+      },
+
+      "(min-width: 769px)": function () {
+        gsap.to(ConvertBlack.current, {
+          scrollTrigger: {
+            trigger: ConvertBlack.current,
+            start: "top =100",
+            toggleActions: "play none none reverse",
+            
+          },
+          backgroundColor: "gray",
+          color: "white",
+          duration: 1,
+        });
+      },
+    });
+  });
+
+
+
   return (
     <motion.div
       variants={pageVariants}
@@ -71,13 +112,15 @@ const Donation = () => {
         </motion.div>
       </div>
 
-      {/* Cost Breakdown Section */}
+      <div ref={ConvertBlack} className="">
+
+        {/* Cost Breakdown Section */}
       <motion.div variants={textVariants} initial="hidden" animate="visible" className="w-[95vw] mx-auto my-10">
         <h1 className="font-semibold text-3xl text-center">💻 Website Development Cost in India</h1>
-        <p className="text-lg text-gray-700 mt-6">
+        <p className="text-lg  mt-6">
           Website development costs in India are budget-friendly, making it a preferred destination for businesses.
         </p>
-        <motion.ul variants={listVariants} initial="hidden" animate="visible" className="list-disc list-inside text-gray-800 text-lg mt-4">
+        <motion.ul variants={listVariants} initial="hidden" animate="visible" className="list-disc list-inside  text-lg mt-4">
           <motion.li variants={listVariants}>Basic website (5-10 pages): ₹5,000 - ₹20,000 ($70– $250) <strong>👉Limited Time Offer👈</strong></motion.li>
           <motion.li variants={listVariants}>Small business website (10-12 pages): ₹10,000 - ₹25,000 ($160 – $300)</motion.li>
           <motion.li variants={listVariants}>E-commerce website (50-100 products): ₹20,000 - ₹50,000 ($400 – $1000)</motion.li>
@@ -87,13 +130,13 @@ const Donation = () => {
 
       {/* Domain Section */}
       <div className="w-[90vw] mx-auto my-10">
-        <h1 className="text-2xl font-semibold text-gray-800 mb-5">🛠️ Domain Registration & Selection</h1>
-        <p className="text-lg text-gray-700">
+        <h1 className="text-2xl font-semibold  mb-5">🛠️ Domain Registration & Selection</h1>
+        <p className="text-lg ">
           A domain name is the unique identity of your website. It’s essential to select a short, memorable, and SEO-friendly domain.
           In India, domain prices range from INR 100 to INR 6000 per year, depending on the popularity and extension.
         </p>
 
-        <ul className="list-disc list-inside text-gray-800 text-lg mt-4">
+        <ul className="list-disc list-inside  text-lg mt-4">
           <li>Choose a short and easy-to-remember domain name.</li>
           <li>Use relevant keywords for SEO benefits.</li>
           <li>Avoid hyphens and numbers in domain names.</li>
@@ -110,15 +153,18 @@ const Donation = () => {
         </div>
 
         {/* Useful Links */}
-        <div className="mt-10 bg-gray-100 p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-semibold text-gray-800">🔗 Useful Domain Links</h2>
-          <ul className="list-disc list-inside text-lg text-blue-700 mt-4">
+        <div className="mt-10  p-6 rounded-lg shadow-lg">
+          <h2 className="text-2xl font-semibold ">🔗 Useful Domain Links</h2>
+          <ul className="list-disc list-inside text-lg  mt-4">
             <li><a href="https://www.hostinger.in/" target="_blank" rel="noopener noreferrer">Buy a Domain</a></li>
             <li><a href="https://www.whois.com/" target="_blank" rel="noopener noreferrer">Check Domain Availability</a></li>
             <li><a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Free Hosting & Deployment</a></li>
           </ul>
         </div>
       </div>
+      </div>
+      
+
       {/* Why devlop the website */}
       <div className="w-[90vw] m-auto ">
         <h2 className="text-2xl font-semibold text-stone-700 mb-5">

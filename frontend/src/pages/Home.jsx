@@ -29,7 +29,7 @@ const Home = () => {
         >
           <img
             className="w-full max-w-[400px] rounded-lg object-cover border-4 border-indigo-500"
-            src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=500&auto=format&fit=crop&q=60"
+            src="https://fetchpik.com/images/fetchpik.com-iconscout-sDIhKSkoUx.png"
             alt="Profile Picture"
           />
           <div className="social-links mt-4 flex justify-center gap-4">
