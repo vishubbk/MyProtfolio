@@ -57,7 +57,7 @@ const Projects = () => {
       <div className="flex-1 flex items-center justify-center py-12 px-4 mt-20 ">
         <div
           ref={circleRef}
-          className="relative w-[280px] h-[280px] sm:w-[250px] sm:h-[350px] lg:w-[420px] lg:h-[420px] rounded-full border border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.4)] flex items-center justify-center"
+          className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[420px] lg:h-[420px] rounded-full border border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.4)] flex items-center justify-center"
         >
           {projects.map((project, i) => {
             const angle = (i / projects.length) * (2 * Math.PI);
