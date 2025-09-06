@@ -8,7 +8,7 @@ const Footer = () => {
 
         {/* Logo & Description */}
         <div className="mb-6 md:mb-0 text-center md:text-left">
-          <h2 className="text-3xl font-bold text-[#1853d3]">&lt;Leptop_tz/&gt;</h2>
+          <h2 className="text-3xl font-bold text-[#1853d3]">&lt;PREETABH/&gt;</h2>
           <p className="text-black text-sm mt-2">Your go-to platform for learning & growing in tech.</p>
         </div>
 
@@ -25,7 +25,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="border-t border-gray-700 mt-6 pt-4 text-center text-sm text-black">
-        © {new Date().getFullYear()} &lt;Leptop_tz/&gt;. All Rights Reserved.
+        © {new Date().getFullYear()} &lt;PREETABH/&gt;. All Rights Reserved.
       </div>
     </footer>
   );
