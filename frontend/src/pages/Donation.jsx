@@ -46,7 +46,7 @@ const Donation = () => {
         gsap.to(ConvertBlack.current, {
           scrollTrigger: {
             trigger: ConvertBlack.current,
-            start: "top -=500",
+            start: "top -=400",
             toggleActions: "play none none reverse",
 
           },
@@ -59,11 +59,11 @@ const Donation = () => {
         gsap.to(ConvertBlack.current, {
           scrollTrigger: {
             trigger: ConvertBlack.current,
-            start: "top =100",
+            start: "top =50",
             toggleActions: "play none none reverse",
             
           },
-          backgroundColor: "gray",
+          backgroundColor: "black",
           color: "white",
           duration: 1,
         });
@@ -111,8 +111,8 @@ const Donation = () => {
           <img className="w-[90%] md:w-[75%] border-4 border-blue-800 rounded-lg mt-10 shadow-lg" src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMxfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" alt="Website Development" />
         </motion.div>
       </div>
-
-      <div ref={ConvertBlack} className="">
+      <div ref={ConvertBlack}>
+      <div  className="">
 
         {/* Cost Breakdown Section */}
       <motion.div variants={textVariants} initial="hidden" animate="visible" className="w-[95vw] mx-auto my-10">
@@ -167,11 +167,11 @@ const Donation = () => {
 
       {/* Why devlop the website */}
       <div className="w-[90vw] m-auto ">
-        <h2 className="text-2xl font-semibold text-stone-700 mb-5">
+        <h2 className="text-2xl font-semibold text-stone-400 mb-5">
           Why Should you build a website in India ??
         </h2>
         <p className="text-lg ">
-          Keep in mind that almost every business is opting to build a website. Therefore it's likely that your competitors have already done so. Will you risk falling behind and losing customers? <a className="underline text-amber-700" href="https://www.graffiti9.com/blog/website-importance-stats/#:~:text=75%25%20of%20consumers%20admit%20to,any%20business%20through%20its%20website.">76% of people</a> say they won't do business with a company that doesn't have a website.
+          Keep in mind that almost every business is opting to build a website. Therefore it's likely that your competitors have already done so. Will you risk falling behind and losing customers? <a className="underline hover:text-blue-500 transition-all text-amber-700" href="https://www.graffiti9.com/blog/website-importance-stats/#:~:text=75%25%20of%20consumers%20admit%20to,any%20business%20through%20its%20website.">76% of people</a> say they won't do business with a company that doesn't have a website.
           If you're an entrepreneur or professional, having a website allows you to present your ideas and services to potential clients. No matter the size or nature of your organization, you need a website to serve as an online storefront. Websites play an essential role in attracting customers and expanding the reach of organizations of all sizes.
          </p>
       </div>
@@ -189,7 +189,7 @@ const Donation = () => {
       </div>
       {/* demo website */}
       <div className="p-5">
-      <h2 className="text-2xl md:text-3xl font-semibold text-red-800 mb-5 flex justify-center">
+      <h2 className="text-2xl md:text-3xl font-semibold text-yellow-500 mb-5 flex justify-center">
         👨‍💻 Demonstration of a Website 👨‍💻
       </h2>
 
@@ -203,7 +203,7 @@ const Donation = () => {
 
         {/* Content Section */}
         <div className="text-center md:text-left">
-          <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+          <h3 className="text-lg md:text-xl font-semibold text-gray-400">
             Website Design and Development
           </h3>
           <p className="text-sm md:text-base">
@@ -234,8 +234,9 @@ const Donation = () => {
         </div>
       </div>
     </div>
+   
 
-      <Footer />
+      <Footer /> </div>
     </motion.div>
   );
 };

@@ -57,7 +57,7 @@ const Projects = () => {
       name: "To-Do App2",
       description: ["React", "OpenWeather API", "TailwindCSS"],
       image:
-        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=500",
+        "https://media.geeksforgeeks.org/wp-content/uploads/20230518223324/Screenshot-from-2023-05-18-22-33-11.png",
         link:"https://url-short-p5mg.onrender.com/#/",
     },
      
@@ -65,22 +65,22 @@ const Projects = () => {
       name: "PASSWORD-MANAGER",
       description: ["React", "TailwindCSS", "GSAP"],
       image:
-        "https://images.unsplash.com/photo-1522199710521-72d69614c702?w=500",
-          link:"https://url-short-p5mg.onrender.com/PasswordManager",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL1Hj9peSEEAZD6jdYr7yIEdKthmic6a4Svcxit0-K5u0jh9p23ti0qeRUGxQVywz_sO0&usqp=CAU",
+          link:"https://url-short-p5mg.onrender.com/#/PasswordManager",
     },
     {
       name: "TEXT-TO-PDF-CONVERTER",
       description: ["React", "TailwindCSS", "GSAP"],
       image:
-        "https://images.unsplash.com/photo-1522199710521-72d69614c702?w=500",
-          link:"https://url-short-p5mg.onrender.com/PdfCovert",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCzhSCBSrI10Yq-rBOKDQiH3QzdFShzTJf61kVQbLa5g6_4PwupzZm4LiiDObiYS4B6E0&usqp=CAU",
+          link:"https://url-short-p5mg.onrender.com/#/PdfCovert",
     },
     {
       name: "QR-CODE-GENRATOR",
       description: ["React", "TailwindCSS",],
       image:
-        "https://images.unsplash.com/photo-1522199710521-72d69614c702?w=500",
-          link:"https://url-short-p5mg.onrender.com/QrCode",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyjnYzJHAaOwtrn1GqT0EJ3Bf33_JF5sAy0OrXyhjiZJ_UWQYM1FuaOFgFIBqadLwnNFY&usqp=CAU",
+          link:"https://url-short-p5mg.onrender.com/#/QrCode",
     },
   ];
 
@@ -105,7 +105,7 @@ const Projects = () => {
         </div>
 
         {/* Major Projects */}
-        <div className="mt-20">
+        <div className="mt-20 ">
           <h3 className="text-3xl font-bold text-blue-700 mb-10 text-center">
             🌟 Major Projects
           </h3>
@@ -113,7 +113,7 @@ const Projects = () => {
             {MajorProjects.map((project, index) => (
               <div
                 key={index}
-                className="bg-blue-100 rounded-2xl shadow-md hover:shadow-2xl transition-transform duration-300 hover:-translate-y-2"
+                className="hover:border-blue-700 hover:border-2 border-0 transition-all bg-blue-100 rounded-2xl shadow-md hover:shadow-2xl  duration-400 "
               >
                 <img
                   src={project.image}
@@ -157,7 +157,7 @@ const Projects = () => {
             {MinorProjects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white border border-blue-200 rounded-xl shadow-sm hover:shadow-lg transition duration-300"
+                className="hover:border-blue-700 hover:border-2 border-0 transition-all bg-white  rounded-xl shadow-sm hover:shadow-lg  duration-300"
               >
                 <img
                   src={project.image}
@@ -172,6 +172,9 @@ const Projects = () => {
                     {project.description.map((tech, i) => (
                       <li
                         key={i}
+
+
+                        
                         className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium"
                       >
                         {tech}

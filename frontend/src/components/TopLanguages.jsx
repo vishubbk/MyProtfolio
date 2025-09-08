@@ -150,7 +150,7 @@ const TopLanguages = () => {
 
   return (
     <div className="py-16 px-4 bg-gradient-to-br from-gray-50 via-white to-gray-100 min-h-screen">
-      {/* Top Languages Section */}
+      {/* MY SKILLS Section */}
       <div className="max-w-7xl mx-auto">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-indigo-700 mb-12">
@@ -166,7 +166,7 @@ const TopLanguages = () => {
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2, delay: index * 0.11 }}
+                transition={{ duration: 0.1, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
                 <div
