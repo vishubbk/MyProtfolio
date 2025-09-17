@@ -27,6 +27,25 @@ const Projects = () => {
     },
 
     {
+      name: "AI Review GPT",
+      description: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "MongoDB",
+        "NodeJs",
+        "Express",
+        "React",
+        "TailwindCSS",
+        "OpenAI API",
+
+      ],
+      link:"https://ai-reviewgpt.onrender.com/",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6WpZ1r8jNBlkGMqzrQ9xf83YvRcxPQwdK2Q&s",
+    },
+
+    {
       name: "K72 WEBSITE CLONE",
       description: [
         "HTML",
@@ -60,7 +79,7 @@ const Projects = () => {
         "https://media.geeksforgeeks.org/wp-content/uploads/20230518223324/Screenshot-from-2023-05-18-22-33-11.png",
         link:"https://url-short-p5mg.onrender.com/#/",
     },
-     
+
     {
       name: "PASSWORD-MANAGER",
       description: ["React", "TailwindCSS", "GSAP"],
@@ -140,7 +159,7 @@ const Projects = () => {
                       Major Project
                     </span>
                     </a>
-                   
+
                   </div>
                 </div>
               </div>
@@ -174,7 +193,7 @@ const Projects = () => {
                         key={i}
 
 
-                        
+
                         className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium"
                       >
                         {tech}
@@ -187,7 +206,7 @@ const Projects = () => {
                       Minor Project
                     </span>
                     </a>
-                    
+
                   </div>
                 </div>
               </div>

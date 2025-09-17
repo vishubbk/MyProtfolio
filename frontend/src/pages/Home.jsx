@@ -20,7 +20,7 @@ const Home = () => {
         // ✅ Loader Section
         <div className="flex flex-col items-center justify-center min-h-[300px]">
           <motion.div
-          
+
             className="text-blue-600 mb-4"
           >
            <img className="w-30 mt-15 " src="https://fetchpik.com/images/fetchpik.com-iconscout-bfA4ydUmx9.png" alt="" />
@@ -51,8 +51,8 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <img
-                className="w-full max-w-[400px] rounded-lg object-cover border-4 border-indigo-500"
-                src="https://fetchpik.com/images/fetchpik.com-iconscout-sDIhKSkoUx.png"
+                className="w-full h-90 max-w-[400px] rounded-lg object-cover border-4 border-indigo-500"
+                src="https://images.unsplash.com/photo-1525373698358-041e3a460346?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA4fHxjb21wdXRlciUyMGRvJTIwbW9yZXxlbnwwfHwwfHx8MA%3D%3D"
                 alt="Profile Picture"
               />
               <div className="social-links mt-4 flex justify-center gap-4">
