@@ -20,6 +20,27 @@ const Projects = () => {
         "Express",
         "React",
         "TailwindCSS",
+        "Socket.IO",  
+        "WebRTC",
+      ],
+      image:
+        "https://framerusercontent.com/images/g0YTRh7uRHpbWQgSZz62bO050.png?width=1378&height=880",
+        link:"https://chat-app-frontend-rpez.onrender.com/#/"
+    },
+    {
+      name: "Fullstack Mall",
+      description: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "MongoDB",
+        "NodeJs",
+        "Express",
+        "React",
+        "TailwindCSS",
+        "multer",
+        "Cloudinary",
+        "Stripe API",
       ],
       image:
         "https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?w=500",
@@ -137,7 +158,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-64 object-cover rounded-t-2xl"
+                  className="w-full h-64 object-contain rounded-t-2xl"
                 />
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-blue-800">
